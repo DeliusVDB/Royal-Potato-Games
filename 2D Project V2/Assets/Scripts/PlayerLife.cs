@@ -9,6 +9,10 @@ public class PlayerLife : MonoBehaviour
     private SpriteRenderer sprite;
     private PlayerMovement pm;
 
+    private bool dead = false;
+
+    [SerializeField] AudioSource deathMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +21,12 @@ public class PlayerLife : MonoBehaviour
         pm = GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (transform.position.y < -15f && !dead)
+        {
+            Die();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,8 +41,10 @@ public class PlayerLife : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         sprite.enabled = false;
+        deathMusic.Play();
         Invoke("RestartLevel", 2f);
         pm.enabled = false;
+        dead = true;
     }
 
     private void RestartLevel()
