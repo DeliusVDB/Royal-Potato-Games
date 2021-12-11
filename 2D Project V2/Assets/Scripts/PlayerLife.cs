@@ -7,12 +7,14 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private PlayerMovement pm;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        pm = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class PlayerLife : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         sprite.enabled = false;
         Invoke("RestartLevel", 2f);
+        pm.enabled = false;
     }
 
     private void RestartLevel()
