@@ -7,7 +7,7 @@ public class CollectItem : MonoBehaviour
 {
     private int collected = 0;
 
-    [SerializeField] private Text coinText;
+    [SerializeField] private Text collectedText;
     [SerializeField] private AudioSource collectItemEffect;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,7 +18,7 @@ public class CollectItem : MonoBehaviour
             Destroy(collision.gameObject);
             collected++;
             Debug.Log(collected);
-            coinText.text = $"Coins: {collected}/15";
+            collectedText.text = $"Apples Collected: {collected}/35";
         }
     } 
 }
