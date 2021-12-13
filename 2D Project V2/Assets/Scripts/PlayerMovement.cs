@@ -9,7 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private Animator anim;
 
+    public float distance;
+    public LayerMask ladder;
+    private bool isClimbing;
+
     private float dirX;
+    private float dirY;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
@@ -37,6 +42,31 @@ public class PlayerMovement : MonoBehaviour
         {
             sound.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, Vector2.up, distance, ladder);
+
+        if (raycastHit.collider != null)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                isClimbing = true;
+            }
+        }
+        else
+        {
+            isClimbing = false;
+        }
+
+        if (isClimbing)
+        {
+            dirY = Input.GetAxisRaw("Vertical");
+            rb.velocity = new Vector2(rb.velocity.x, dirY * moveSpeed);
+            rb.gravityScale = 0;
+        }
+        else
+        {
+            rb.gravityScale = 1;
         }
 
         AnimationState();
