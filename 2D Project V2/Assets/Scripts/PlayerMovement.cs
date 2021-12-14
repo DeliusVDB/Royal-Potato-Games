@@ -6,18 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
-    private BoxCollider2D coll;
+    private CircleCollider2D circleColl;
     private Animator anim;
 
     public float distance;
+
     public LayerMask ladder;
+
     private bool isClimbing;
 
-    private float dirX;
-    private float dirY;
+    private float dirX, dirY;
 
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float moveSpeed, jumpForce;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private AudioSource sound;
 
@@ -26,10 +26,10 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        circleColl = gameObject.GetComponent<CircleCollider2D>();
+        sprite = gameObject.GetComponent<SpriteRenderer>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -91,11 +91,11 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (rb.velocity.y > .1f)
+        if (rb.velocity.y > 0.1f)
         {
             state = MovementState.jumping;
         }
-        else if (rb.velocity.y < -.1f)
+        else if (rb.velocity.y < -0.1f)
         {
             state = MovementState.falling;
         }
@@ -105,6 +105,55 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+        return Physics2D.BoxCast(circleColl.bounds.center, circleColl.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
+
+//    private Rigidbody2D rb;
+
+//    [SerializeField] private float moveSpeed, jumpForce;
+
+//    private float moveHorizontal, moveVertical;
+//    private bool isJumping;
+
+//    private void Start()
+//    {
+//        rb = gameObject.GetComponent<Rigidbody2D>();
+//    }
+
+//    private void Update()
+//    {
+//        moveHorizontal = Input.GetAxisRaw("Horizontal");
+//        moveVertical = Input.GetAxisRaw("Vertical");
+//    }
+
+//    // FixedUpdate is used for Physics
+//    private void FixedUpdate()
+//    {
+//        if (moveHorizontal > 0.1f || moveHorizontal < -0.1f)
+//        {
+//            rb.AddForce(new Vector2(moveHorizontal * moveSpeed, rb.velocity.y), ForceMode2D.Impulse);
+//        }
+
+//        if (moveVertical > 0.1f && isJumping)
+//        {
+//            rb.AddForce(new Vector2(rb.velocity.x, moveVertical * jumpForce), ForceMode2D.Impulse);
+//        }
+//    }
+
+//    private void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if (collision.gameObject.CompareTag("Ground"))
+//        {
+//            isJumping = false;
+//        }
+//    }
+
+//    private void OnTriggerExit2D(Collider2D collision)
+//    {
+//        if (collision.gameObject.CompareTag("Ground"))
+//        {
+//            isJumping = true;
+//        }
+//    }
+//}
