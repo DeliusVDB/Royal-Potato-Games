@@ -12,12 +12,10 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] AudioSource deathMusic;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
     }
 
     private void Update()

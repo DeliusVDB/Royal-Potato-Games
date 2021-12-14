@@ -12,7 +12,6 @@ public class DontDestroyBGMusic : MonoBehaviour
         Destroy(music[1]);
     }
 
-    // Update is called once per frame
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);

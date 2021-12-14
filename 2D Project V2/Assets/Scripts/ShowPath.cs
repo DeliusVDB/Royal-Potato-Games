@@ -10,10 +10,9 @@ public class ShowPath : MonoBehaviour
 
     private int collected;
 
-    // Update is called once per frame
     void Update()
     {
-        if (collected >= 18)
+        if (collected >= 7)
         {
             tileMapRender.enabled = true;
             tileMapCollide.enabled = true;

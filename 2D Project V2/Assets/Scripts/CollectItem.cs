@@ -17,8 +17,7 @@ public class CollectItem : MonoBehaviour
             collectItemEffect.Play();
             Destroy(collision.gameObject);
             collected++;
-            Debug.Log(collected);
-            collectedText.text = $"Apples Collected: {collected}/35";
+            collectedText.text = $"Apples Collected: {collected}/15";
         }
     } 
 }
