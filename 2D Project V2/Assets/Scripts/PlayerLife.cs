@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private SpriteRenderer sprite;
-    private PlayerMovement pm;
+    private Animator anim;
 
     private bool dead = false;
 
@@ -17,13 +16,13 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        pm = GetComponent<PlayerMovement>();
+        anim = GetComponent<Animator>();
+
     }
 
     private void Update()
     {
-        if (transform.position.y < -30f && !dead)
+        if (transform.position.y < -20f && !dead)
         {
             Die();
         }
@@ -40,10 +39,8 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
-        sprite.enabled = false;
+        anim.SetTrigger("death");
         deathMusic.Play();
-        Invoke("RestartLevel", 2f);
-        pm.enabled = false;
         dead = true;
     }
 
