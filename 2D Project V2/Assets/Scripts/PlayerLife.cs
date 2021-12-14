@@ -22,7 +22,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y < -20f && !dead)
+        if (transform.position.y < -5f && !dead)
         {
             Die();
         }

@@ -44,6 +44,15 @@ TagManager:
   - name: Sky
     uniqueID: 2578648279
     locked: 0
+  - name: Cloud (B)
+    uniqueID: 3860996037
+    locked: 0
+  - name: Mountain
+    uniqueID: 907353473
+    locked: 0
+  - name: Cloud (F)
+    uniqueID: 4104864915
+    locked: 0
   - name: Background
     uniqueID: 1556742687
     locked: 0
