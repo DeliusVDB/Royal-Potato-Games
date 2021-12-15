@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 7449008278031538839}
   - component: {fileID: 7449008278031538838}
   - component: {fileID: 7449008278031538837}
+  - component: {fileID: 1188798017602887713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -176,9 +177,6 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
-  ladder:
-    serializedVersion: 2
-    m_Bits: 128
   sound: {fileID: 7449008278031538833}
 --- !u!114 &7449008278031538834
 MonoBehaviour:
@@ -509,3 +507,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMapRender: {fileID: 0}
   tileMapCollide: {fileID: 0}
+--- !u!114 &1188798017602887713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449008278031538836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77d97cc9d6876748be0ec3302e377c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7449008278031538846}

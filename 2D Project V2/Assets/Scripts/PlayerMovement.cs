@@ -11,13 +11,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float distance;
 
-    private bool isClimbing;
+    //private bool isClimbing;
 
     private float dirX, dirY;
 
     [SerializeField] private float moveSpeed, jumpForce;
-    [SerializeField] private LayerMask jumpableGround, ladder;
+    [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private AudioSource sound;
+
+    //public LayerMask ladder;
 
     private enum MovementState { idle, running, jumping, falling }
 
@@ -40,30 +42,28 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, Vector2.up, distance, ladder);
+        //RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, Vector2.up, distance, ladder);
 
-        if (raycastHit.collider != null)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                isClimbing = true;
-            }
-        }
-        else
-        {
-            isClimbing = false;
-        }
+        //if (raycastHit.collider != null)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.W))
+        //    {
+        //        isClimbing = true;
+        //    }
+        //} else
+        //{
+        //    isClimbing = false;
+        //}
 
-        if (isClimbing)
-        {
-            dirY = Input.GetAxisRaw("Vertical");
-            rb.velocity = new Vector2(rb.velocity.x, dirY * moveSpeed);
-            rb.gravityScale = 0;
-        }
-        else
-        {
-            rb.gravityScale = 1;
-        }
+        //if (isClimbing)
+        //{
+        //    dirY = Input.GetAxisRaw("Vertical");
+        //    rb.velocity = new Vector2(rb.velocity.x, dirY * moveSpeed);
+        //    rb.gravityScale = 0;
+        //} else
+        //{
+        //    rb.gravityScale = 1;
+        //}
 
         AnimationState();
     }
