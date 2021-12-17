@@ -7,7 +7,11 @@ public class SettingsMenu : MonoBehaviour
 {
     public TMP_Dropdown ResolutionDropdown;
 
+    private PauseMenu pauseMenu;
+
     Resolution[] resolutions;
+
+    //private GameObject gameObject;
 
     private void Start()
     {
@@ -34,6 +38,14 @@ public class SettingsMenu : MonoBehaviour
         ResolutionDropdown.value = CurrentResolutionIndex;
         ResolutionDropdown.RefreshShownValue();
     }
+
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        gameObject.SetActive(false);
+    //    }
+    //}
 
     public void SetResolution(int ResolutionIndex)
     {
