@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1597051547}
-  lerpSpeed: 1
+  lerpSpeed: 5
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3525,7 +3525,6 @@ GameObject:
   - component: {fileID: 1113244511}
   - component: {fileID: 1113244510}
   - component: {fileID: 1113244509}
-  - component: {fileID: 1113244514}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3546,6 +3545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  attackDamage: 10
+  attackSpeed: 1
 --- !u!70 &1113244510
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3644,22 +3645,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1113244514
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113244508}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.008811509}
-  serializedVersion: 2
-  m_Radius: 0.65581656
 --- !u!1001 &1135578781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11750,6 +11735,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 928767654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1959146060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5628018141983903104, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 957077648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1959146061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959146060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6e77b778e95704eadd0aaa731e983b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1001 &1963873851
 PrefabInstance:
   m_ObjectHideFlags: 0
