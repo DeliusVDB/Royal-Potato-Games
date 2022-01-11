@@ -161,7 +161,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.0681176, g: 0.5849056, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1300,6 +1300,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130b66465bc564c469815a2619f6b5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xInput: 0
+  yInput: 0
+  isCarrying: 0
+  isIdle: 0
+  isLiftingToolRight: 0
+  isLiftingToolLeft: 0
+  isLiftingToolUp: 0
+  isLiftingToolDown: 0
+  isRunning: 0
+  isUsingToolLeft: 0
+  isUsingToolUp: 0
+  isUsingToolDown: 0
+  isSwingingToolRight: 0
+  isSwingingToolLeft: 0
+  isSwingingToolUp: 0
+  isSwingingToolDown: 0
+  isWalking: 0
+  isUsingToolRight: 0
+  isPickingRight: 0
+  isPickingLeft: 0
+  isPickingUp: 0
+  isPickingDown: 0
+  toolEffect: 0
 --- !u!114 &8728250548120091774
 MonoBehaviour:
   m_ObjectHideFlags: 0
