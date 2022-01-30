@@ -4,29 +4,32 @@ using UnityEngine;
 public class Player : SingletonMonoBehaviour<Player>
 {
     // Movement Parameters
-    public float xInput;
-    public float yInput;
-    public bool isCarrying;
-    public bool isIdle;
-    public bool isLiftingToolRight;
-    public bool isLiftingToolLeft;
-    public bool isLiftingToolUp;
-    public bool isLiftingToolDown;
-    public bool isRunning;
-    public bool isUsingToolLeft;
-    public bool isUsingToolUp;
-    public bool isUsingToolDown;
-    public bool isSwingingToolRight;
-    public bool isSwingingToolLeft;
-    public bool isSwingingToolUp;
-    public bool isSwingingToolDown;
-    public bool isWalking;
-    public bool isUsingToolRight;
-    public bool isPickingRight;
-    public bool isPickingLeft;
-    public bool isPickingUp;
-    public bool isPickingDown;
-    public ToolEffect toolEffect = ToolEffect.none;
+    private float xInput;
+    private float yInput;
+    private bool isCarrying;
+    private bool isIdle;
+    private bool isLiftingToolRight;
+    private bool isLiftingToolLeft;
+    private bool isLiftingToolUp;
+    private bool isLiftingToolDown;
+    private bool isRunning;
+    private bool isUsingToolLeft;
+    private bool isUsingToolUp;
+    private bool isUsingToolDown;
+    private bool isSwingingToolRight;
+    private bool isSwingingToolLeft;
+    private bool isSwingingToolUp;
+    private bool isSwingingToolDown;
+    private bool isWalking;
+    private bool isUsingToolRight;
+    private bool isPickingRight;
+    private bool isPickingLeft;
+    private bool isPickingUp;
+    private bool isPickingDown;
+
+    private Camera mainCamera;
+
+    private ToolEffect toolEffect = ToolEffect.none;
 
     private Rigidbody2D rigidbody2D;
 
@@ -42,6 +45,9 @@ public class Player : SingletonMonoBehaviour<Player>
         base.Awake();
 
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+        // get reference to main camera
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -158,4 +164,11 @@ public class Player : SingletonMonoBehaviour<Player>
         isPickingDown = false;
         toolEffect = ToolEffect.none;
     }
+
+    public Vector3 GetPlayerViewportPosition()
+    {
+    // Vector3 viewport position for player (0,0) viewport bottom left, (1,1) viewport top right
+    return mainCamera.WorldToViewportPoint(transform.position);
+    }
+    
 }
