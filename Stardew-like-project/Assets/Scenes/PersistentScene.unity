@@ -200,6 +200,7 @@ MonoBehaviour:
   - {fileID: 1881093637}
   - {fileID: 1894842035}
   - {fileID: 844311710}
+  inventoryBarDraggedItem: {fileID: 1144446278872073195, guid: d288ba3274baa6d44be86dc3a093cfeb, type: 3}
 --- !u!114 &72376984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +334,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &309046843 stripped
@@ -435,6 +440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &458046591 stripped
@@ -866,6 +875,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &753803189 stripped
@@ -968,6 +981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &777632178 stripped
@@ -1070,6 +1087,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &844311709 stripped
@@ -1136,7 +1157,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8784246, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1328,6 +1349,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &1403414478 stripped
@@ -1430,6 +1455,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &1588750033 stripped
@@ -1589,6 +1618,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &1673231982 stripped
@@ -1805,6 +1838,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &1881093636 stripped
@@ -1996,6 +2033,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &1913863094 stripped
@@ -2109,6 +2150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!224 &2025490154 stripped
@@ -2447,6 +2492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6443654524575704900, guid: 27827984f95db01479a1afe13497b812, type: 3}
+      propertyPath: inventoryBar
+      value: 
+      objectReference: {fileID: 72376983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27827984f95db01479a1afe13497b812, type: 3}
 --- !u!212 &4468583208108053187
