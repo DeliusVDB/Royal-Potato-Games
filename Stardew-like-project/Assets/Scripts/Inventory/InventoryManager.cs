@@ -5,6 +5,8 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 {
     private Dictionary<int, ItemDetails> itemDetailsDictionary;
 
+    private int[] selectedInventoryItem; //the index of the array is the inventory list, and the value is the item code
+
     public List<InventoryItem>[] inventoryLists;
 
     // The index of the array is the inventory list (from the InventoryLocation enum), and the value is the capacity of that inventory list
@@ -21,6 +23,14 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 
         // Create item details dictionary
         CreateItemDetailsDictionary();
+
+        // Inistialize selected inventory item array
+        selectedInventoryItem = new int[(int)InventoryLocation.count];
+
+        for (int i = 0; i < selectedInventoryItem.Length; i++)
+        {
+            selectedInventoryItem[1] = -1;
+        }
     }
 
     public void CreateInventoryLists()
@@ -111,6 +121,11 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
             // send event that invenotry has been updated
             EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryLists[(int)inventoryLocation]);
         }
+    }
+
+    public void ClearSelectedInventoryItem(InventoryLocation inventoryLocation)
+    {
+        selectedInventoryItem[(int)inventoryLocation] = -1;
     }
 
     /// <summary>
@@ -240,6 +255,16 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         {
             inventoryList.RemoveAt(position);
         }
+    }
+
+    /// <summary>
+    /// set the selected inventory item for inventorylocation to itemcode
+    /// </summary>
+    /// <param name="inventoryLocation"></param>
+    /// <param name="itemCode"></param>
+    public void SetSelectedInventoryItem(InventoryLocation inventoryLocation, int itemCode)
+    {
+        selectedInventoryItem[(int)inventoryLocation] = itemCode;
     }
 
     //private void DebugPrintInventoryList(List<InventoryItem> inventoryList)
