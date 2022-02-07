@@ -354,6 +354,76 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4059681415518392047, guid: 27827984f95db01479a1afe13497b812, type: 3}
   m_PrefabInstance: {fileID: 309046842}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &378098761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 378098762}
+  - component: {fileID: 378098763}
+  m_Layer: 0
+  m_Name: CharacterCustomiser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &378098762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378098761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1135907301357541927}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &378098763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378098761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85be0b656c81d145b49eb344eac7078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1563721732809818854}
+  soAnimationTypeArray:
+  - {fileID: 11400000, guid: 47a85a564af799d4b856c5432fe58f0c, type: 2}
+  - {fileID: 11400000, guid: dfe38e5be5ba601408815465d4776d95, type: 2}
+  - {fileID: 11400000, guid: e1f19152054beb541a6b02a233869dae, type: 2}
+  - {fileID: 11400000, guid: d4b020dd83470c1478c539ef941d3d75, type: 2}
+  - {fileID: 11400000, guid: 40b5d22656c57b94c8f2b572c0069a7e, type: 2}
+  - {fileID: 11400000, guid: 2b8d60762913d0b418d1c0beb6caa7f3, type: 2}
+  - {fileID: 11400000, guid: 3d95a76bee497d04db7769a251de1a96, type: 2}
+  - {fileID: 11400000, guid: 74255053b5fe4de4bbb16d7769c9d531, type: 2}
+  - {fileID: 11400000, guid: 7378cb76969b1bb429fb72d34877e010, type: 2}
+  - {fileID: 11400000, guid: 726276039baea8a4991c5937cbe2f0c9, type: 2}
+  - {fileID: 11400000, guid: e0065cde87e528f4cad9679fb9af12d1, type: 2}
+  - {fileID: 11400000, guid: fdcaacf45b0a634479ce12d7c8578a29, type: 2}
+  - {fileID: 11400000, guid: 178fde0fa48d1e848a27bfff2a81f9cb, type: 2}
+  - {fileID: 11400000, guid: 3a37fb477a8b87c4892f36835759e41c, type: 2}
+  - {fileID: 11400000, guid: 7db6480405232224dbdbbf0c2a9782cc, type: 2}
+  - {fileID: 11400000, guid: dc0f24a14c9b8f444ae64a53362a9c08, type: 2}
+  - {fileID: 11400000, guid: ae8b62c9cbbeb62498fa1d517458aadf, type: 2}
+  - {fileID: 11400000, guid: babbe25d569641841a2c8fe1fbea5dc3, type: 2}
+  - {fileID: 11400000, guid: 35b443bd74d614b4f910cbd750ae6ab2, type: 2}
+  - {fileID: 11400000, guid: 1c900f876a8bd2a44b8d6c283d863f46, type: 2}
+  - {fileID: 11400000, guid: e384085bb20a0a1458bbe620c7a3345a, type: 2}
+  - {fileID: 11400000, guid: 64afa070226b77445aa2bfd26bd91393, type: 2}
+  - {fileID: 11400000, guid: d55da35ed74799e47a51142af0a805d9, type: 2}
+  - {fileID: 11400000, guid: 4e91ebf15d4ac554481d84b5d3145b8f, type: 2}
 --- !u!1001 &458046590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2362,6 +2432,7 @@ Transform:
   - {fileID: 5166999709864014657}
   - {fileID: 1904119442574337378}
   - {fileID: 4485080743248632770}
+  - {fileID: 378098762}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2765,7 +2836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6422569821101926646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3258,6 +3329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130b66465bc564c469815a2619f6b5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equippedItemSpriteRenderer: {fileID: 4468583208108053187}
 --- !u!114 &8728250548120091774
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,15 +44,30 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         inventoryBar.SetHighlightedInventorySlots();
 
         InventoryManager.Instance.SetSelectedInventoryItem(InventoryLocation.player, itemDetails.itemCode);
+
+        if (itemDetails.canBeCarried == true)
+        {
+            // Show player carrying item
+            Player.Instance.ShowCarriedItem(itemDetails.itemCode);
+        }
+        else // show player carrying nothing
+        {
+            Player.Instance.ClearCarriedItem();
+        }
     }
 
     private void ClearSelectedItem()
     {
+        // clear currently highlighted items
         inventoryBar.ClearHighlightOnInventorySlots();
 
         isSelected = false;
 
+        // set no item selected in inventory
         InventoryManager.Instance.ClearSelectedInventoryItem(InventoryLocation.player);
+
+        // Clear player carrying item
+        Player.Instance.ClearCarriedItem();
     }
 
     private void DropSelectedItemAtMousePosition()
