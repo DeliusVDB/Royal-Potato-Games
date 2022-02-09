@@ -70,6 +70,13 @@ public enum InventoryLocation
     count
 }
 
+public enum SceneName
+{
+    Scene1_Farm,
+    Scene2_Field,
+    Scene3_Cabin
+}
+
 public enum Season
 {
     Spring,
