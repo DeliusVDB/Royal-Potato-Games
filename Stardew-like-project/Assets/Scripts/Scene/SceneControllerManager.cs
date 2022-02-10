@@ -72,6 +72,34 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
         EventHandler.CallAfterSceneLoadFadeInEvent();
     }
 
+    private IEnumerator LoadSceneAndSetActive(string sceneName)
+    {
+        //Allow the given scene to load over several frames and add it to the already loaded scenes (just the Persistant scene at this point)
+        yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+        // Find the scene that was most recently loaded (The one at the last index of the loaded scenes)
+        Scene newlyLoadedScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
+
+        // Set the newly loaded scene as the active scene (this marks it as the one to be unloaded next)
+        SceneManager.SetActiveScene(newlyLoadedScene);
+    }
+
+    private IEnumerator Start()
+    {
+        // Set the initial alpha to start off with a black screen.
+        faderImage.color = new Color(0f,0f,0f,1f);
+        faderCanvasGroup.alpha = 1f;
+
+        // Start the first scene loading and wait for it to finish
+        yield return StartCoroutine(LoadSceneAndSetActive(startingSceneName.ToString()));
+
+        // If this event has any subscribers, call  it
+        EventHandler.CallAfterSceneLoadEvent();
+
+        // Once the scene is finished loading, start fading in
+        StartCoroutine(Fade(0f));
+    }
+
     // This is the main external point of contact and influence from the rest of the project.
     // This will be called when the player wants to switch scenes.
     public void FadeAndLoadScene(string sceneName, Vector3 spawnPosition)
