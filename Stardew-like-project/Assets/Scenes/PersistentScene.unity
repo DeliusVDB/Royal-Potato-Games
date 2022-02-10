@@ -1543,7 +1543,7 @@ MonoBehaviour:
   fadeDuration: 1
   faderCanvasGroup: {fileID: 1945170460}
   faderImage: {fileID: 1945170461}
-  startingSceneName: 1
+  startingSceneName: 0
 --- !u!1 &1227962416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1592,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7975432, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
