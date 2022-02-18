@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GridCoordinate
 {
-    public int x, y;
+    public int x;
+    public int y;
 
     public GridCoordinate(int p1, int p2)
     {
