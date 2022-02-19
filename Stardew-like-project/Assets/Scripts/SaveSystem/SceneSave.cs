@@ -6,5 +6,9 @@ using UnityEngine;
 
 public class SceneSave
 {
-    public Dictionary<string, List<SceneItem>> listSceneItemDictionary;
+    //public Dictionary<string, List<SceneItem>> listSceneItemDictionary;
+
+    // string key is an identifier name we choose for this list
+    public List<SceneItem> listSceneItem;
+    public Dictionary<string, GridPropertyDetails> gridPropertyDetailsDictionary;
 }
