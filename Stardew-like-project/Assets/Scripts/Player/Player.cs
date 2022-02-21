@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : SingletonMonoBehaviour<Player>
 {
     private AnimationOverrides animationOverrides;
+    private GridCursor gridCursor;
 
     // Movement Parameters
     private float xInput;
@@ -70,17 +71,24 @@ public class Player : SingletonMonoBehaviour<Player>
         mainCamera = Camera.main;
     }
 
+    private void Start()
+    {
+        gridCursor = FindObjectOfType<GridCursor>();
+    }
+
     private void Update()
     {
         #region Player Input
 
         if (!PlayerInputIsDisabled)
         {
-        ResetAnimationTriggers();
+            ResetAnimationTriggers();
 
-        PlayerMovementInput();
+            PlayerMovementInput();
 
-        PlayerWalkInput();
+            PlayerClickInput();
+
+            PlayerWalkInput();
 
             PlayerTestInput();
 
@@ -122,6 +130,82 @@ public class Player : SingletonMonoBehaviour<Player>
             isWalking= false;
             isIdle = false;
             movementSpeed= Settings.runningSpeed;
+        }
+    }
+
+    private void PlayerClickInput()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (gridCursor.CursorIsEnabled)
+            {
+                ProcessPlayerClickInput();
+            }
+        }
+    }
+
+    private void ProcessPlayerClickInput()
+    {
+        ResetMovement();
+
+        // Get Selected Item Details
+        ItemDetails itemDetails = InventoryManager.Instance.GetSelectedInventoryItemDetails(InventoryLocation.player);
+
+        if (itemDetails != null)
+        {
+            switch (itemDetails.itemType)
+            {
+                case ItemType.Seed:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ProcessPlayerClickInputSeed(itemDetails);
+                    }
+                    break;
+                case ItemType.Commodity:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ProcessPlayerClickInputCommodity(itemDetails);
+                    }
+                    break;
+                //case ItemType.Watering_tool:
+                //    break;
+                //case ItemType.Hoeing_tool:
+                //    break;
+                //case ItemType.Choping_tool:
+                //    break;
+                //case ItemType.Breaking_tool:
+                //    break;
+                //case ItemType.Reaping_tool:
+                //    break;
+                //case ItemType.Collecting_tool:
+                //    break;
+                //case ItemType.Reapable_scenary:
+                //    break;
+                //case ItemType.Furniture:
+                //    break;
+                case ItemType.none:
+                    break;
+                case ItemType.count:
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void ProcessPlayerClickInputSeed(ItemDetails itemDetails)
+    {
+        if (itemDetails.canBeDropped && gridCursor.CursorPositionIsValid)
+        {
+            EventHandler.CallDropSelectedItemEvent();
+        }
+    }
+
+    private void ProcessPlayerClickInputCommodity(ItemDetails itemDetails)
+    {
+        if (itemDetails.canBeDropped && gridCursor.CursorPositionIsValid)
+        {
+            EventHandler.CallDropSelectedItemEvent();
         }
     }
 
