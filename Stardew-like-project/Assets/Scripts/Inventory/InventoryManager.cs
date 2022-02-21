@@ -188,6 +188,35 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     }
 
     /// <summary>
+    /// Returns the item details from SO_ItemList for the currently selected item in the inventoryLocationn, or null if an item isn't selected
+    /// </summary>
+    /// <param name="inventoryLocation"></param>
+    /// <returns></returns>
+    public ItemDetails GetSelectedInventoryItemDetails(InventoryLocation inventoryLocation)
+    {
+        int itemCode = GetSelectedInventoryItem(inventoryLocation);
+
+        if (itemCode == -1)
+        {
+            return null;
+        }
+        else
+        {
+            return GetItemDetails(itemCode);
+        }
+    }
+
+    /// <summary>
+    /// Get selected item for inventoryLocation - returns itemCode or -1 if nothing is selected
+    /// </summary>
+    /// <param name="inventoryLocation"></param>
+    /// <returns></returns>
+    private int GetSelectedInventoryItem(InventoryLocation inventoryLocation)
+    {
+        return selectedInventoryItem[(int)inventoryLocation];
+    }
+
+    /// <summary>
     /// Get item type description for an item type - returns the item type description as a string for a given ItemType
     /// </summary>
     /// <param name="itemType"></param>
