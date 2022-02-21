@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GridCuror : MonoBehaviour
+public class GridCursor : MonoBehaviour
 {
     private Canvas canvas;
     private Grid grid;
