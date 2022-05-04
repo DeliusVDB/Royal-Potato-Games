@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -120,6 +121,14 @@ public class GridCursor : MonoBehaviour
                         return;
                     }
                     break;
+
+                case ItemType.Hoeing_tool:
+                    if (!IsCursorValidForTool(gridPropertyDetails, itemDetails))
+                    {
+                        SetCursorToInvalid();
+                        return;
+                    }
+
                 case ItemType.none:
                     break;
                 case ItemType.count:
@@ -155,6 +164,40 @@ public class GridCursor : MonoBehaviour
     private bool IsCursorValidForSeed(GridPropertyDetails gridPropertyDetails)
     {
         return gridPropertyDetails.canDropItem;
+    }
+
+    private bool IsCursorValidForTool(GridPropertyDetails gridPropertyDetails, ItemDetails itemDetails)
+    {
+        // Switch on tool
+        switch (itemDetails.itemType)
+        {
+            case ItemType.Seed:
+                break;
+            case ItemType.Commodity:
+                break;
+            case ItemType.Watering_tool:
+                break;
+            case ItemType.Hoeing_tool:
+                break;
+            case ItemType.Choping_tool:
+                break;
+            case ItemType.Breaking_tool:
+                break;
+            case ItemType.Reaping_tool:
+                break;
+            case ItemType.Collecting_tool:
+                break;
+            case ItemType.Reapable_scenary:
+                break;
+            case ItemType.Furniture:
+                break;
+            case ItemType.none:
+                break;
+            case ItemType.count:
+                break;
+            default:
+                break;
+        }
     }
 
     public void DisableCursor()
